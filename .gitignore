@@ -282,12 +282,12 @@ __pycache__/
 # !tools/packages.config
 
 ### Unity ###
-HearthStone.Unity/[Ll]ibrary/
-HearthStone.Unity/[Tt]emp/
-HearthStone.Unity/[Oo]bj/
-HearthStone.Unity/[Bb]uild/
-HearthStone.Unity/[Bb]uilds/
-HearthStone.Unity/Assets/AssetStoreTools*
+Credit.Unity/[Ll]ibrary/
+Credit.Unity/[Tt]emp/
+Credit.Unity/[Oo]bj/
+Credit.Unity/[Bb]uild/
+Credit.Unity/[Bb]uilds/
+Credit.Unity/Assets/AssetStoreTools*
 
 # Visual Studio 2015 cache directory
 /.vs/

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{92E43C9A-D64B-450F-B7A5-76218D3B6854}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Credit.Library</RootNamespace>
+    <AssemblyName>Credit.Library</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MsgPack">
+      <HintPath>..\..\..\..\MsgPack.Cli.1.0.0\net46\MsgPack.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Card.cs" />
+    <Compile Include="CommunicationInfrastructure\CommunicationInterface.cs" />
+    <Compile Include="CommunicationInfrastructure\Operation\Handlers\EndPointOperationHandlers\EndPointFetchDataBroker.cs" />
+    <Compile Include="CommunicationInfrastructure\Operation\Handlers\FetchDataBroker.cs" />
+    <Compile Include="CommunicationInfrastructure\Operation\Handlers\FetchDataHandler.cs" />
+    <Compile Include="CommunicationInfrastructure\Operation\Handlers\OperationHandler.cs" />
+    <Compile Include="CommunicationInfrastructure\Operation\Managers\EndPointOperationManager.cs" />
+    <Compile Include="CommunicationInfrastructure\Operation\Managers\PlayerOperationManager.cs" />
+    <Compile Include="EndPoint.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="GameManager.cs" />
+    <Compile Include="LogService.cs" />
+    <Compile Include="OperationInterface.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WaitingPlayerCounter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Credit.Protocol\Credit.Protocol.csproj">
+      <Project>{436d0948-bc90-4a5a-829d-3a5f276a622e}</Project>
+      <Name>Credit.Protocol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HearthStone.Protocol.Communication\Credit.Protocol.Communication.csproj">
+      <Project>{4e96ef96-bd66-4a83-98e8-0ccff47a7d50}</Project>
+      <Name>Credit.Protocol.Communication</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
